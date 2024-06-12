@@ -1,3 +1,27 @@
-[gd_resource type="Theme" format=3 uid="uid://dksih84eo6d65"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dksih84eo6d65"]
+
+[ext_resource type="StyleBox" uid="uid://51uij8f7l4pe" path="res://assets/ui/elements/btn_hover.tres" id="1_67xlm"]
+[ext_resource type="StyleBox" uid="uid://dorks3dj6i47b" path="res://assets/ui/elements/btn_normal.tres" id="2_xh8n3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a1pk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvr5x"]
+bg_color = Color(0, 0, 0, 1)
 
 [resource]
+Button/colors/font_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = ExtResource("1_67xlm")
+Button/styles/hover = ExtResource("1_67xlm")
+Button/styles/normal = ExtResource("2_xh8n3")
+Button/styles/pressed = ExtResource("1_67xlm")
+Label/colors/font_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+Label/styles/normal = SubResource("StyleBoxFlat_5a1pk")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_lvr5x")
+RichTextLabel/colors/default_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+buttonToggle/base_type = &"Button"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ActionMakeWood" load_steps=3 format=3 uid="uid://dtu7fxhd7qjje"]
+
+[ext_resource type="Script" path="res://data/res/actions/action_make_wood.gd" id="1_3j6jl"]
+[ext_resource type="PackedScene" uid="uid://cymbufaobr4bw" path="res://data/res/items/wood.tscn" id="2_ihnau"]
+
+[resource]
+script = ExtResource("1_3j6jl")
+wood_scene = ExtResource("2_ihnau")
+name = "Find Wood"
+desc = "Make Wood"
+baseTime = 2

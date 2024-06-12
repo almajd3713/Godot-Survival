@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckh6jeg7gtkxf"]
+
+[ext_resource type="PackedScene" uid="uid://bota1y5aornju" path="res://data/nodes/item/item_manager.tscn" id="1_1i62k"]
+[ext_resource type="Resource" uid="uid://bjdfdavtg1862" path="res://data/res/items/pickaxe.tres" id="2_d2dbc"]
+[ext_resource type="PackedScene" uid="uid://nrxteygj7hyy" path="res://data/nodes/item/generator_manager.tscn" id="3_icxb4"]
+[ext_resource type="PackedScene" uid="uid://bwma3hndaq6kq" path="res://data/nodes/item/durability_manager.tscn" id="4_eusqh"]
+
+[node name="Pickaxe" type="Node"]
+
+[node name="ItemManager" parent="." instance=ExtResource("1_1i62k")]
+data = ExtResource("2_d2dbc")
+
+[node name="GeneratorManager" parent="." node_paths=PackedStringArray("data") instance=ExtResource("3_icxb4")]
+data = NodePath("..")
+
+[node name="DurabilityManager" parent="." instance=ExtResource("4_eusqh")]
+durability = 16
+max_durability = 16

@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3 uid="uid://dctot8icyxnfr"]
+
+[ext_resource type="Script" path="res://scenes/tabs/tab_default.gd" id="1_2why0"]
+[ext_resource type="Script" path="res://scenes/tabs/inventory/item_container.gd" id="2_kxvi1"]
+[ext_resource type="Texture2D" uid="uid://bacdlqpwmv5rx" path="res://assets/items/wood.svg" id="3_cvrmn"]
+[ext_resource type="Script" path="res://scenes/tabs/inventory/InventoryViewManager.gd" id="4_v4bp0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmyek"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+
+[node name="TabInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2why0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderLarge"
+text = "Inventory Tab"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemsContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 5
+script = ExtResource("2_kxvi1")
+
+[node name="ItemDescription" type="Control" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/ItemDescription"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wmyek")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_cvrmn")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<ItemName>"
+
+[node name="ItemDesc" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "<ItemDesc>"
+fit_content = true
+
+[node name="ItemCount" type="Label" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<ItemCount>"
+
+[node name="ItemDur" type="Label" parent="MarginContainer/VBoxContainer/ItemDescription/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<ItemDur>"
+
+[node name="InventoryViewManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_v4bp0")

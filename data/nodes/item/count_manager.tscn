@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjfp5cye0b5ev"]
+
+[ext_resource type="Script" path="res://data/nodes/item/count_manager.gd" id="1_uc7tj"]
+
+[node name="CountManager" type="Node"]
+script = ExtResource("1_uc7tj")

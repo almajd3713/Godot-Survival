@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PrototypeItem" load_steps=3 format=3 uid="uid://bjdfdavtg1862"]
+
+[ext_resource type="Script" path="res://data/templates/prototypeItem.gd" id="1_tbmg7"]
+[ext_resource type="Texture2D" uid="uid://c7gleqpk74moi" path="res://assets/items/pickaxe.png" id="1_vqo5l"]
+
+[resource]
+script = ExtResource("1_tbmg7")
+item_name = "Stone Pickaxe"
+code_name = "pickaxe"
+description = "It mines shi, not very strongo tho"
+icon = ExtResource("1_vqo5l")

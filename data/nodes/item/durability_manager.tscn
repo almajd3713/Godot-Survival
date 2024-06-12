@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwma3hndaq6kq"]
+
+[ext_resource type="Script" path="res://data/nodes/item/durability_manager.gd" id="1_17ro6"]
+
+[node name="DurabilityManager" type="Node"]
+script = ExtResource("1_17ro6")

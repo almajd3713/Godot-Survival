@@ -18,7 +18,23 @@ config/icon="res://icon.svg"
 [autoload]
 
 Data="*res://data/Manager/Data.gd"
+Enums="*res://data/Manager/Enums.gd"
+Signals="*res://data/Manager/Signals.gd"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/integer_division=0
 
 [dotnet]
 
 project/assembly_name="Try 2"
+
+[gui]
+
+theme/custom="res://assets/ui/ui_theme.tres"
+theme/custom_font="res://assets/fonts/OpenSans-VariableFont_wdth,wght.ttf"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

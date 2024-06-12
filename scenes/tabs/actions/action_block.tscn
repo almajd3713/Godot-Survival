@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://8yoi1if6g205"]
+
+[ext_resource type="Script" path="res://scenes/tabs/actions/action_block.gd" id="1_vdluy"]
+[ext_resource type="Resource" uid="uid://4cqt2dsjv2ik" path="res://data/res/actions/action_explore.tres" id="2_nrr7b"]
+[ext_resource type="StyleBox" uid="uid://dorks3dj6i47b" path="res://assets/ui/elements/btn_normal.tres" id="3_w6372"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qh3p"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eo0b5"]
+bg_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4515"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5227"]
+bg_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+
+[node name="ActionBlock" type="MarginContainer"]
+custom_minimum_size = Vector2(250, 0)
+offset_right = 133.0
+offset_bottom = 100.0
+script = ExtResource("1_vdluy")
+action = ExtResource("2_nrr7b")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qh3p")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+text = "<action>"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "<action__desc>
+"
+fit_content = true
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/focus = ExtResource("3_w6372")
+text = "Start"
+
+[node name="ProgressBarContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eo0b5")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ProgressBarContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/ProgressBarContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_k4515")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m5227")
+show_percentage = false
+
+[node name="ActionTimer" type="Timer" parent="."]

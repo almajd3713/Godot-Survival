@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c72ewe8u7oy3b"]
+
+[ext_resource type="Texture2D" uid="uid://bacdlqpwmv5rx" path="res://assets/items/wood.svg" id="1_fqmfh"]
+[ext_resource type="Script" path="res://scenes/tabs/inventory/inventory_item.gd" id="1_oxelc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbaub"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(2.04556e-06, 0.593103, 0.0178979, 1)
+
+[node name="InventoryItem" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_sbaub")
+script = ExtResource("1_oxelc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="InventoryIcon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_fqmfh")
+expand_mode = 4
+
+[node name="InventoryName" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<name>"
+horizontal_alignment = 1

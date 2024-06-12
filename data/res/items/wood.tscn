@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cymbufaobr4bw"]
+
+[ext_resource type="PackedScene" uid="uid://bota1y5aornju" path="res://data/nodes/item/item_manager.tscn" id="1_4bhot"]
+[ext_resource type="Resource" uid="uid://cwg12l7r3dxoy" path="res://data/res/items/wood.tres" id="2_13png"]
+[ext_resource type="PackedScene" uid="uid://bjfp5cye0b5ev" path="res://data/nodes/item/count_manager.tscn" id="2_xjt3e"]
+[ext_resource type="PackedScene" uid="uid://nrxteygj7hyy" path="res://data/nodes/item/generator_manager.tscn" id="3_iu37b"]
+
+[node name="Wood" type="Node"]
+
+[node name="ItemManager" parent="." instance=ExtResource("1_4bhot")]
+data = ExtResource("2_13png")
+
+[node name="CountManager" parent="." instance=ExtResource("2_xjt3e")]
+
+[node name="GeneratorManager" parent="." node_paths=PackedStringArray("data") instance=ExtResource("3_iu37b")]
+data = NodePath("..")

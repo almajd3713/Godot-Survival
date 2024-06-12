@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PrototypeItem" load_steps=3 format=3 uid="uid://cwg12l7r3dxoy"]
+
+[ext_resource type="Texture2D" uid="uid://bacdlqpwmv5rx" path="res://assets/items/wood.svg" id="1_brom5"]
+[ext_resource type="Script" path="res://data/templates/prototypeItem.gd" id="1_x8ano"]
+
+[resource]
+script = ExtResource("1_x8ano")
+item_name = "Wood Logs"
+code_name = "wood"
+description = "Very loggy fr"
+icon = ExtResource("1_brom5")

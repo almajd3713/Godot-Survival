@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://4cqt2dsjv2ik"]
+
+[ext_resource type="Script" path="res://data/templates/prototypeAction.gd" id="1_e6l5w"]
+
+[resource]
+script = ExtResource("1_e6l5w")
+name = "Explore"
+desc = "Explore the realms, may ye find something of use..."
+baseTime = 10
