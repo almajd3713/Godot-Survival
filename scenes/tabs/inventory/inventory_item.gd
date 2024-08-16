@@ -22,9 +22,12 @@ func _on_click(e):
     Signals.InventoryItemShow.emit(item)
 
 func update_ui():
+  print("AA")
   if item:
-    %InventoryName.text = item.get_node("ItemManager").item_name
-    %InventoryIcon.texture = item.get_node("ItemManager").icon
+    Util.Item(item, func(manager):
+      %InventoryName.text = manager.item_name
+      %InventoryIcon.texture = manager.icon
+    )
 
 func _on_cursor_toggle(entered: bool):
   if entered:

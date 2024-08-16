@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Try 2"
 run/main_scene="res://scenes/game/game.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Data="*res://data/Manager/Data.gd"
 Enums="*res://data/Manager/Enums.gd"
 Signals="*res://data/Manager/Signals.gd"
+Util="*res://data/Manager/Utilities.gd"
 
 [debug]
 

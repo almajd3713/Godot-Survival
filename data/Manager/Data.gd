@@ -19,7 +19,7 @@ func load_game(path: String = "user://saves/save_1.dat"):
   # if FileAccess.file_exists(path):
   #   load_game_saved("user://saves/save_1.dat")
   # else:
-    load_new_game()
+  load_new_game()
 
 func load_game_saved(path: String = "user://saves/save_1.dat"):
   var file = FileAccess.open(path, FileAccess.READ)

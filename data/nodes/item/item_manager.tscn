@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bota1y5aornju"]
-
-[ext_resource type="Script" path="res://data/nodes/item/item_manager.gd" id="1_bg3m5"]
-
-[node name="ItemManager" type="Node"]
-script = ExtResource("1_bg3m5")

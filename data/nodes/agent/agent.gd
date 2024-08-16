@@ -16,5 +16,8 @@ func _init():
   inventory = Inventory.new()
 
 func give(item: Node):
-  if item.get_node("CountManager"):
-    inventory.push(item)
+  # if item.get_node("CountManager"):
+  #   inventory.push(item)
+  if not inventory.isAvailable(item): inventory.push(item)
+  else:
+    
